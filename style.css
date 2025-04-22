@@ -1,0 +1,339 @@
+/* ----------- Global Styles ----------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2 {
+    margin-bottom: 0.5em;
+}
+
+section {
+    padding: 2rem 1.5rem;
+}
+
+
+/* ----------- Header / Nav ----------- */
+
+
+header {
+    background: #1a1a2e;
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
+}
+
+nav ul li {
+    cursor: pointer;
+}
+
+nav button {
+    padding: 0.5rem 1rem;
+    background-color: #4ecca3;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ----------- Hero Section ----------- */
+
+#hero {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+#hero p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ----------- Cards Layout ----------- */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.cards-container .card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s forwards ease;
+}
+
+.cards-container .card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card h3 {
+   color: #000;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color:black;
+}
+
+/* ----------- Dwarf Planet Styling ----------- */
+
+
+.card.dwarf {
+    border: 2px dashed #f39c12;
+}
+
+/* ----------- Footer ----------- */
+
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1a1a2e;
+    color: white;
+    margin-top: 2rem;
+}
+
+/* ----------- Dark Theme (Toggleable) ----------- */
+ 
+body.dark {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark header,
+body.dark footer {
+    background-color: #000;
+}
+
+body.dark .card {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+body.dark .card p {
+    color: #ccc;
+}
+
+body.dark #hero {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+body.dark .card h3{
+    color: whitesmoke;
+}
+/* ----------- Animations ----------- */
+
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ----------- Responsive Tweaks ----------- */
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    audio {
+        bottom: 10px;
+        left: 10px;
+    }
+}
+
+
+
+/* mercury */
+
+/* === General Resets === */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #f0f0f0;
+    padding: 1rem;
+}
+
+
+/* === Header === */
+
+
+header {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #ffd369;
+    margin-bottom: 0.5rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #a0c4ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #fcbf49;
+}
+
+/* === Planet Detail Layout === */
+
+
+.planet-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.planet-img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.planet-info {
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.planet-info h2 {
+    color: #ffd369;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
+.planet-info p, .planet-info li {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+.planet-info ul {
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+/* === Footer === */
+footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+
+
+
+/* // image sprite  */
+
+
+.sprite {
+  background-image: url('/assets/sprites/planets-sprite.png');
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+  display: inline-block;
+}
+
+.jupiter { background-position: 0 0; }
+.saturn  { background-position: -128px 0; }
+.neptune { background-position: -256px 0; }
+
+
+.sprite-jupiter {
+    background-image: url('/sprites/planets-sprite.png');
+    background-position: 0 0;
+    /* This positions Jupiter */
+    width: 100px;
+    height: 100px;
+}
+
+.sprite-saturn {
+    background-image: url('/sprites/planets-sprite.png');
+    background-position: -100px 0;
+    /* This positions Saturn */
+}
